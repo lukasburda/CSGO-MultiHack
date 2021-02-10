@@ -1,0 +1,12 @@
+E:\DEV\C# Projects\CSGO-MultiHack\bin\Debug\CSGOHack.exe.config
+E:\DEV\C# Projects\CSGO-MultiHack\bin\Debug\CSGOHack.exe
+E:\DEV\C# Projects\CSGO-MultiHack\bin\Debug\CSGOHack.pdb
+E:\DEV\C# Projects\CSGO-MultiHack\bin\Debug\VAMemory.dll
+E:\DEV\C# Projects\CSGO-MultiHack\obj\Debug\CSGO-MultiHack.csprojAssemblyReference.cache
+E:\DEV\C# Projects\CSGO-MultiHack\obj\Debug\CSGOHack.MainWindow.resources
+E:\DEV\C# Projects\CSGO-MultiHack\obj\Debug\CSGOHack.Properties.Resources.resources
+E:\DEV\C# Projects\CSGO-MultiHack\obj\Debug\CSGO-MultiHack.csproj.GenerateResource.cache
+E:\DEV\C# Projects\CSGO-MultiHack\obj\Debug\CSGO-MultiHack.csproj.CoreCompileInputs.cache
+E:\DEV\C# Projects\CSGO-MultiHack\obj\Debug\CSGO-MultiHack.csproj.CopyComplete
+E:\DEV\C# Projects\CSGO-MultiHack\obj\Debug\CSGOHack.exe
+E:\DEV\C# Projects\CSGO-MultiHack\obj\Debug\CSGOHack.pdb
