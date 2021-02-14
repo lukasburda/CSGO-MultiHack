@@ -14,6 +14,7 @@ namespace CSGOHack.Hack
         {
             while (hackThread.IsAlive)
             {
+                Thread.Sleep(1);
                 int glowManager = mem.ReadInt32(baseAddress + offsets["dwGlowObjectManager"]);
                 if (glowManager == 0)
                 {
@@ -45,7 +46,6 @@ namespace CSGOHack.Hack
                         mem.WriteInt32((IntPtr)(glowManager + entityGlow * 0x38 + 0x24), 1);
                     }
                 }
-                Thread.Sleep(1);
             }
         }
     }
