@@ -27,6 +27,8 @@ namespace CSGOHack
             
             hacks.Add(new WallHack(mem, baseAddress, offsets));
             hacks.Add(new AntiFlashHack(mem, baseAddress, offsets));
+            hacks.Add(new BunnyHopHack(mem, baseAddress, offsets));
+
             foreach (AbstractHack hack in hacks)
             {
                 hack.Start();
