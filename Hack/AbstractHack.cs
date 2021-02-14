@@ -10,13 +10,15 @@ namespace CSGOHack.Hack
         protected VAMemory mem;
         protected IntPtr baseAddress;
         protected Thread hackThread;
+        protected Dictionary<String, int> offsets;
 
-        public AbstractHack(VAMemory mem, IntPtr baseAddress)
+        public AbstractHack(VAMemory mem, IntPtr baseAddress, Dictionary<String, int> offsets)
         {
             this.mem = mem;
             this.baseAddress = baseAddress;
             hackThread = new Thread(new ThreadStart(this.Run));
             hackThread.IsBackground = true;
+            this.offsets = offsets;
         }
         public void Start()
         {

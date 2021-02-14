@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using CSGOHack.Hack;
+using CSGOHack.Offset;
 using CSGOHack.Util;
 
 namespace CSGOHack
@@ -22,13 +23,15 @@ namespace CSGOHack
 
             VAMemory mem = new VAMemory(PROCESS_NAME);
             IntPtr baseAddress = Utils.GetBaseAddress(PROCESS_NAME, DLL_NAME);
-
-            hacks.Add(new WallHack(mem, baseAddress));
-            hacks.Add(new AntiFlashHack(mem, baseAddress));
+            Dictionary<String, int> offsets = OffsetParser.ParseOffsets("csgo.CT");
+            
+            hacks.Add(new WallHack(mem, baseAddress, offsets));
+            hacks.Add(new AntiFlashHack(mem, baseAddress, offsets));
             foreach (AbstractHack hack in hacks)
             {
                 hack.Start();
             }
+
             Application.Run(form);
         }
     }

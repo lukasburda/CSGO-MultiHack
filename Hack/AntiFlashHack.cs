@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace CSGOHack.Hack
 {
     public class AntiFlashHack : AbstractHack
     {
-        public AntiFlashHack(VAMemory mem, IntPtr baseAddress) : base(mem, baseAddress)
+        public AntiFlashHack(VAMemory mem, IntPtr baseAddress, Dictionary<String, int> offsets) : base(mem, baseAddress, offsets)
         {
 
         }
@@ -15,14 +16,13 @@ namespace CSGOHack.Hack
             int player = 0;
             do
             {
-                player = mem.ReadInt32(baseAddress + 0xD8B2BC);
-                Thread.Sleep(100);
+                player = mem.ReadInt32(baseAddress + offsets["dwLocalPlayer"]);
             } while (player != 0);
 
             while (hackThread.IsAlive)
             {
-                mem.WriteFloat((IntPtr)(player + 0xA41C), 1);
-                Thread.Sleep(10);
+                mem.WriteFloat((IntPtr)(player + offsets["m_flFlashMaxAlpha"]), 1);
+                Thread.Sleep(1);
             }
         }
     }

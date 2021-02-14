@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace CSGOHack.Hack
 {
     class WallHack : AbstractHack
     {
-        public WallHack(VAMemory mem, IntPtr baseAddress) : base(mem, baseAddress)
+        public WallHack(VAMemory mem, IntPtr baseAddress, Dictionary<String, int> offsets) : base(mem, baseAddress, offsets)
         {
 
         }
@@ -13,20 +14,20 @@ namespace CSGOHack.Hack
         {
             while (hackThread.IsAlive)
             {
-                int glowManager = mem.ReadInt32(baseAddress + 0x52EB540);
+                int glowManager = mem.ReadInt32(baseAddress + offsets["dwGlowObjectManager"]);
                 if (glowManager == 0)
                 {
                     continue;
                 }
                 for (int i = 1; i < 32; i++)
                 {
-                    int entity = mem.ReadInt32(baseAddress + 0x4DA2F44 + i * 0x10);
+                    int entity = mem.ReadInt32(baseAddress + offsets["dwEntityList"] + i * 0x10);
                     if (entity == 0)
                     {
                         continue;
                     }
-                    int entityTeamID = mem.ReadInt32((IntPtr)entity + 0xF4);
-                    int entityGlow = mem.ReadInt32((IntPtr)entity + 0xA438);
+                    int entityTeamID = mem.ReadInt32((IntPtr)entity + offsets["m_iTeamNum"]);
+                    int entityGlow = mem.ReadInt32((IntPtr)entity + offsets["m_iGlowIndex"]);
                     if (entityTeamID == 2)
                     {
                         mem.WriteFloat((IntPtr)(glowManager + entityGlow * 0x38 + 0x4), 1);

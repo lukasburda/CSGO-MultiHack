@@ -38,7 +38,7 @@ namespace CSGOHack
             this.labelTest.AutoSize = true;
             this.labelTest.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelTest.Location = new System.Drawing.Point(12, 9);
-            this.labelTest.Name = "labelTest";
+            this.labelTest.Name = "infoText";
             this.labelTest.Size = new System.Drawing.Size(198, 13);
             this.labelTest.TabIndex = 0;
             this.labelTest.Text = "POUZIVAS HACKY, PROTOZE SI PICA";
