@@ -30,30 +30,33 @@ namespace CSGOHack
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.labelTest = new System.Windows.Forms.Label();
+            this.hacksInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // labelTest
+            // hacksInfo
             // 
-            this.labelTest.AutoSize = true;
-            this.labelTest.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTest.Location = new System.Drawing.Point(12, 9);
-            this.labelTest.Name = "infoText";
-            this.labelTest.Size = new System.Drawing.Size(198, 13);
-            this.labelTest.TabIndex = 0;
-            this.labelTest.Text = "POUZIVAS HACKY, PROTOZE SI PICA";
+            this.hacksInfo.AutoSize = true;
+            this.hacksInfo.Cursor = System.Windows.Forms.Cursors.No;
+            this.hacksInfo.Font = new System.Drawing.Font("Righteous", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hacksInfo.ForeColor = System.Drawing.Color.Lime;
+            this.hacksInfo.Location = new System.Drawing.Point(13, 9);
+            this.hacksInfo.Name = "hacksInfo";
+            this.hacksInfo.Size = new System.Drawing.Size(282, 37);
+            this.hacksInfo.TabIndex = 0;
+            this.hacksInfo.Text = "HACKS ACTIVATED!";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InfoText;
-            this.ClientSize = new System.Drawing.Size(250, 35);
-            this.Controls.Add(this.labelTest);
+            this.ClientSize = new System.Drawing.Size(307, 61);
+            this.Controls.Add(this.hacksInfo);
+            this.Cursor = System.Windows.Forms.Cursors.No;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
-            this.Text = "Hacky vole";
+            this.Text = "CSGO: Hacks by Lukyynn_";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -61,6 +64,6 @@ namespace CSGOHack
 
         #endregion
 
-        public System.Windows.Forms.Label labelTest;
+        private System.Windows.Forms.Label hacksInfo;
     }
 }
