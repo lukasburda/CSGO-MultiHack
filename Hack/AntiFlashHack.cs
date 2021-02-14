@@ -13,14 +13,9 @@ namespace CSGOHack.Hack
 
         public override void Run()
         {
-            int player = 0;
-            do
-            {
-                player = mem.ReadInt32(baseAddress + offsets["dwLocalPlayer"]);
-            } while (player != 0);
-
             while (hackThread.IsAlive)
             {
+                int player = mem.ReadInt32(baseAddress + offsets["dwLocalPlayer"]);
                 mem.WriteFloat((IntPtr)(player + offsets["m_flFlashMaxAlpha"]), 1);
                 Thread.Sleep(1);
             }
