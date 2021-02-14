@@ -15,13 +15,13 @@ namespace CSGOHack.Hack
         {
             while (hackThread.IsAlive)
             {
+                Thread.Sleep(1);
                 int player = mem.ReadInt32(baseAddress + offsets["dwLocalPlayer"]);
                 if (player == 0)
                 {
                     continue;
                 }
                 mem.WriteFloat((IntPtr)(player + offsets["m_flFlashMaxAlpha"]), 1);
-                Thread.Sleep(1);
             }
         }
     }

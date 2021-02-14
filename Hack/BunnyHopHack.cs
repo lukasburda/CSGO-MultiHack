@@ -15,6 +15,7 @@ namespace CSGOHack.Hack
         {
             while (hackThread.IsAlive)
             {
+                Thread.Sleep(1);
                 if ((Control.ModifierKeys & Keys.Alt) == 0)
                 {
                     continue;
@@ -32,7 +33,6 @@ namespace CSGOHack.Hack
                     Thread.Sleep(80);
                     mem.WriteInt32((IntPtr)forceJump, 4);
                 }
-                Thread.Sleep(1);
             }
         }
     }
