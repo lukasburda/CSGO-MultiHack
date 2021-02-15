@@ -68,7 +68,6 @@
     <Compile Include="Hack\WallHack.cs" />
     <Compile Include="Offset\OffsetParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util\Keyboard.cs" />
     <Compile Include="Util\Utils.cs" />
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
