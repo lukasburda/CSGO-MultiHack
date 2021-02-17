@@ -15,18 +15,26 @@ namespace CSGOHack.Hack
         {
             this.mem = mem;
             this.baseAddress = baseAddress;
-            hackThread = new Thread(new ThreadStart(this.Run));
-            hackThread.IsBackground = true;
             this.offsets = offsets;
         }
         public void Start()
         {
+            if (hackThread != null && hackThread.IsAlive)
+            {
+                return;
+            }
+            hackThread = new Thread(new ThreadStart(this.Run));
+            hackThread.IsBackground = true;
             hackThread.Start();
         }
 
         public void Stop()
         {
-            hackThread.Join();
+            if (!hackThread.IsAlive)
+            {
+                return;
+            }
+            hackThread.Abort();
         }
 
         public abstract void Run();
